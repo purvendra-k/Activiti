@@ -199,7 +199,7 @@ angular.module('activitiModeler')
             name: '',
             key: '',
             description: '',
-            modelType:'',
+            modelType:''
        }
     };
 
@@ -209,8 +209,9 @@ angular.module('activitiModeler')
         $scope.model.process.key = $scope.originalModel.process.key;
         $scope.model.process.description = $scope.originalModel.process.description;
         $scope.model.process.id = $scope.originalModel.process.id;
-        $scope.model.process.modelType=$scope.originalModel.process.modelType;
+        $scope.model.process.modelType = $scope.originalModel.process.modelType;
     }
+    
 
     $scope.ok = function () {
 
