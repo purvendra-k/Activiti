@@ -39,8 +39,11 @@ public class TaskClientResource extends AbstractClientResource {
 	protected TaskService clientService;
 
 	/**
-	 * GET /rest/authenticate -> check if the user is authenticated, and return
+	 * GET /rest/authenticate :- check if the user is authenticated, and return
 	 * its login.
+	 * @param taskId, Task Id.
+	 * @param runtime boolean, default is false.
+	 * @return Task.
 	 */
 	@RequestMapping(value = "/rest/activiti/tasks/{taskId}", method = RequestMethod.GET, produces = "application/json")
 	public JsonNode getTask(@PathVariable String taskId, @RequestParam(required=false, defaultValue="false") boolean runtime) throws BadRequestException {

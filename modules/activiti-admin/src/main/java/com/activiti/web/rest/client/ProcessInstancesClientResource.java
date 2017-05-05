@@ -38,7 +38,9 @@ public class ProcessInstancesClientResource extends AbstractClientResource {
     protected ObjectMapper objectMapper = new ObjectMapper();
 
     /**
-     * GET  /rest/authenticate -> check if the user is authenticated, and return its login.
+     * GET  /rest/authenticate :- check if the user is authenticated, and return its login.
+     * @param bodyNode, request body
+     * @return Process Instances
      */
     @RequestMapping(value = "/rest/activiti/process-instances",
             method = RequestMethod.POST,

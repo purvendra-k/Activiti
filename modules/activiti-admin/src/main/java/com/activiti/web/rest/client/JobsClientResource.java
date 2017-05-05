@@ -38,7 +38,9 @@ public class JobsClientResource extends AbstractClientResource {
     protected JobService jobService;
 
     /**
-     * GET  /rest/activiti/jobs -> Get a list of jobs.
+     * GET  /rest/activiti/jobs :- Get a list of jobs.
+     * @param request, HttpServletRequest
+     * @return Jobs
      */
     @RequestMapping(value = "/rest/activiti/jobs",
             method = RequestMethod.GET,

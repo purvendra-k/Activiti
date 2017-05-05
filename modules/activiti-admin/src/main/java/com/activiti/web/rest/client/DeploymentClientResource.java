@@ -36,7 +36,9 @@ public class DeploymentClientResource extends AbstractClientResource {
 	protected DeploymentService clientService;
 
 	/**
-	 * GET /rest/authenticate -> check if the user is authenticated, and return its login.
+	 * GET /rest/authenticate :- check if the user is authenticated, and return its login.
+	 * @param deploymentId, Deployment Id
+	 * @return returns user's login if authenticated otherwise throughs bad request acception
 	 */
 	@RequestMapping(value = "/rest/activiti/deployments/{deploymentId}", method = RequestMethod.GET, produces = "application/json")
 	public JsonNode getDeployment(@PathVariable String deploymentId) throws BadRequestException {

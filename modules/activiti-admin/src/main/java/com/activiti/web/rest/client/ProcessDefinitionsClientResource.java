@@ -38,7 +38,9 @@ public class ProcessDefinitionsClientResource extends AbstractClientResource {
     protected ProcessDefinitionService clientService;
 
     /**
-     * GET  /rest/authenticate -> check if the user is authenticated, and return its login.
+     * GET  /rest/authenticate :- check if the user is authenticated, and return its login.
+     * @param request, HttpServletRequest
+     * @return Process Definitions
      */
     @RequestMapping(value = "/rest/activiti/process-definitions",
             method = RequestMethod.GET,

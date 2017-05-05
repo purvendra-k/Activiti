@@ -39,7 +39,9 @@ public class ModelsClientResource extends AbstractClientResource {
     protected ModelService clientService;
 
     /**
-     * GET  /rest/activiti/models -> get a list of apps.
+     * GET  /rest/activiti/models :- get a list of apps.
+     * @param request, HttpServletRequest
+     * @return Apps
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public JsonNode listModels(HttpServletRequest request) {

@@ -37,7 +37,9 @@ public class JobClientResource extends AbstractClientResource {
 	protected JobService clientService;
 
 	/**
-	 * GET /rest/activiti/jobs/{jobId} -> return job data
+	 * GET /rest/activiti/jobs/{jobId} :- return job data
+	 * @param jobId, Id of the job to fetch job details
+	 * @return Job
 	 */
 	@RequestMapping(value = "/rest/activiti/jobs/{jobId}", method = RequestMethod.GET, produces = "application/json")
 	public JsonNode getJob(@PathVariable String jobId) throws BadRequestException {
@@ -51,7 +53,8 @@ public class JobClientResource extends AbstractClientResource {
 	}
 
 	/**
-	 * DELETE /rest/activiti/jobs/{jobId} -> delete job
+	 * DELETE /rest/activiti/jobs/{jobId} :- delete job
+	 * @param jobId, Id of the job to be deleted
 	 */
 	@RequestMapping(value = "/rest/activiti/jobs/{jobId}", method = RequestMethod.DELETE, produces = "application/json")
 	@ResponseStatus(value = HttpStatus.OK)
@@ -66,7 +69,8 @@ public class JobClientResource extends AbstractClientResource {
 	}
 
 	/**
-	 * POST /rest/activiti/jobs/{jobId} -> execute job
+	 * POST /rest/activiti/jobs/{jobId} :- execute job
+	 * @param jobId, Id of the job to be executed
 	 */
 	@RequestMapping(value = "/rest/activiti/jobs/{jobId}", method = RequestMethod.POST, produces = "application/json")
 	@ResponseStatus(value = HttpStatus.OK)
@@ -81,7 +85,9 @@ public class JobClientResource extends AbstractClientResource {
 	}
 
 	/**
-	 * GET /rest/activiti/jobs/{jobId}/exception-stracktrace -> return job stacktrace
+	 * GET /rest/activiti/jobs/{jobId}/exception-stracktrace :- return job stacktrace
+	 * @param jobId, Id of the job
+	 * @return StackTrace of job.
 	 */
 	@RequestMapping(value = "/rest/activiti/jobs/{jobId}/stacktrace", method = RequestMethod.GET, produces = "text/plain")
 	public String getJobStacktrace(@PathVariable String jobId) throws BadRequestException {

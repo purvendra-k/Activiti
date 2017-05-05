@@ -35,7 +35,8 @@ public class ApplicationConfiguration {
      * This is needed to make property resolving work on annotations ...
      * (see http://stackoverflow.com/questions/11925952/custom-spring-property-source-does-not-resolve-placeholders-in-value)
      *
-     * @Scheduled(cron="${someProperty}")
+     * Scheduled (cron="${someProperty}")
+     * @return PropertySourcesPlaceholderConfigurer
      */
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {

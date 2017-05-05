@@ -37,6 +37,8 @@ public class FormsClientResource extends AbstractClientResource {
 
     /**
      * GET a list of deployed forms.
+     * @param request, HttpServletRequest
+     * @return Forms
      */
     @RequestMapping(value = "/rest/activiti/forms", method = RequestMethod.GET, produces = "application/json")
     public JsonNode listForms(HttpServletRequest request) {
@@ -47,6 +49,9 @@ public class FormsClientResource extends AbstractClientResource {
     
     /**
      * GET process definition's list of deployed forms.
+     * @param processDefinitionId, Id of ProcessDefinition
+     * @param request, HttpServletRequest
+     * @return Forms related to process definition.
      */
     @RequestMapping(value = "/rest/activiti/process-definition-forms/{processDefinitionId}", method = RequestMethod.GET, produces = "application/json")
     public JsonNode getProcessDefinitionForms(@PathVariable String processDefinitionId, HttpServletRequest request) {

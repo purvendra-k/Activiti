@@ -58,7 +58,9 @@ public class AccountResource {
     }
 
     /**
-     * GET  /rest/account -> get the current user.
+     * GET  /rest/account :- get the current user.
+     * @param response, HttpServletResponse
+     * @return returns user account of currently logged in user.
      */
     @RequestMapping(value = "/rest/account",
             method = RequestMethod.GET,

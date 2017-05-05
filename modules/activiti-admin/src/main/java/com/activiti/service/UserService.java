@@ -57,9 +57,13 @@ public class UserService {
     
     /**
      * Creates admin user with the required role
-     * 
+     * @param login, Username to login
+     * @param password, Password to login
+     * @param firstName, First Name of the admin user to be created.
+     * @param lastName, last Name of the admin user to be created
+     * @param email, email of the new user.
      * @throws IllegalArgumentException when login and/or password is empty or null.
-     * @returns the new user. Returns null, when a user with the given login already exists.
+     * @return the new user. Returns null, when a user with the given login already exists.
      */
     public User createAdminUser(String login, String password, String firstName, String lastName, String email) {
     	
@@ -76,8 +80,15 @@ public class UserService {
     }
 
     /**
+     * Creates admin user with the required role
+     * @param login, Username to login
+     * @param password, Password to login
+     * @param firstName, First Name of the admin user to be created.
+     * @param lastName, last Name of the admin user to be created
+     * @param email, email of the new user.
+     * @param authorities, Authorities to be assigned to the user
      * @throws IllegalArgumentException when login and/or password is empty or null.
-     * @returns the new user. Returns null, when a user with the given login already exists.
+     * @return the new user. Returns null, when a user with the given login already exists.
      */
     public User createUser(String login, String password, String firstName, String lastName, String email, String ... authorities) {
 

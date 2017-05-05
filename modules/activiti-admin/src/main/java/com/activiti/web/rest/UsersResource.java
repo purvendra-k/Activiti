@@ -48,7 +48,8 @@ public class UsersResource {
     protected Environment env;
 
     /**
-     * GET  /rest/users -> get a list of users.
+     * GET  /rest/users :- get a list of users.
+     * @return List of all users.
      */
     @RequestMapping(value = "/rest/users",
             method = RequestMethod.GET,
@@ -58,7 +59,8 @@ public class UsersResource {
     }
     
     /**
-     * POST  /rest/users -> create a new user.
+     * POST  /rest/users :- create a new user.
+     * @param userRepresentation, User to be created.
      */
     @RequestMapping(value = "/rest/users", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)

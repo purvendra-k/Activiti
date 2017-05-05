@@ -48,7 +48,10 @@ public class UserResource {
     protected Environment env;
 
     /**
-     * GET  /rest/users/:login -> get the "login" user.
+     * GET  /rest/users/:login :- get the "login" user.
+     * @param login, User
+     * @param response, HttpServletResponse type.
+     * @return returns user account of the user.
      */
     @RequestMapping(value = "/rest/users/{login}",
             method = RequestMethod.GET,
@@ -64,7 +67,9 @@ public class UserResource {
     }
 
     /**
-     * PUT  /rest/users/:login -> update the user.
+     * PUT  /rest/users/:login :- update the user.
+     * @param login, User
+     * @param userRepresentation, UserRepresentation
      */
     @RequestMapping(value = "/rest/users/{login}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
@@ -85,7 +90,9 @@ public class UserResource {
     }
 
     /**
-     * PUT  /rest/users/:login/change_password -> changes the user's password
+     * PUT  /rest/users/:login/change_password :- changes the user's password
+     * @param login, User whose password is to be changed.
+     * @param actionBody, ObjectNode type.
      */
     @RequestMapping(value = "/rest/users/{login}/change-password", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.OK)
@@ -106,7 +113,8 @@ public class UserResource {
     }
 
     /**
-     * DELETE  /rest/users/:login -> delete the user.
+     * DELETE  /rest/users/:login :- delete the user.
+     * @param login, User to be deleted
      */
     @RequestMapping(value = "/rest/users/{login}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)

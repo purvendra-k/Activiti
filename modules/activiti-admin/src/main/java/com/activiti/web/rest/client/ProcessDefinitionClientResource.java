@@ -49,8 +49,10 @@ public class ProcessDefinitionClientResource extends AbstractClientResource {
 	protected ObjectMapper objectMapper = new ObjectMapper();
 
 	/**
-	 * GET /rest/authenticate -> check if the user is authenticated, and return
+	 * GET /rest/authenticate :- check if the user is authenticated, and return
 	 * its login.
+	 * @param definitionId, Process Definition Id.
+	 * @return Process Definition
 	 */
 	@RequestMapping(value = "/rest/activiti/process-definitions/{definitionId}", method = RequestMethod.GET, produces = "application/json")
 	public JsonNode getProcessDefinition(@PathVariable String definitionId) throws BadRequestException {

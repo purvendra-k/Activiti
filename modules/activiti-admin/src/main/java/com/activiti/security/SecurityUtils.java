@@ -27,11 +27,16 @@ public final class SecurityUtils {
 
     /**
      * Get the login of the current user.
+     * @return Returns Current logged in user's name.
      */
     public static String getCurrentLogin() {
         return getCurrentUserDetails().getUsername();
     }
     
+    /**
+     * Checks whether current user is an admin.
+     * @return boolean, isCurrentUserAdmin
+     */
     public static boolean isCurrentUserAnAdmin() {
         for (GrantedAuthority authority: getCurrentUserDetails().getAuthorities()) {
             if (AuthoritiesConstants.ADMIN.equals(authority.getAuthority())) {

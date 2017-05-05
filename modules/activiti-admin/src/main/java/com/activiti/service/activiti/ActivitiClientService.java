@@ -103,6 +103,9 @@ public class ActivitiClientService {
 	 * Execute the given request. Will return the parsed JSON present in the response-body, in case the status code is 200 - OK.
 	 * In case the response returns a different status-code, an {@link ActivitiServiceException} is thrown with the error message received
 	 * from the client, if possible.
+	 * @param request, HttpUriRequest
+	 * @param serverConfig, ServerConfig of server to be accessed.
+	 * @return the parsed JSON present in the response-body
 	 */
 	public JsonNode executeRequest(HttpUriRequest request, ServerConfig serverConfig) {
 		return executeRequest(request, serverConfig, HttpStatus.SC_OK);
@@ -120,6 +123,11 @@ public class ActivitiClientService {
 	 * Execute the given request. Will return the parsed JSON present in the response-body, in case the status code is as expected.
 	 * In case the response returns a different status-code, an {@link ActivitiServiceException} is thrown with the error message received
 	 * from the client, if possible.
+	 * @param request, HttpUriRequest
+	 * @param userName, UserName 
+	 * @param password, Password
+	 * @param expectedStatusCode, code to be compared with the response code from server.
+	 * @return the parsed JSON present in the response-body.
 	 */
 	public JsonNode executeRequest(HttpUriRequest request, String userName, String password, int expectedStatusCode) {
 
@@ -452,6 +460,9 @@ public class ActivitiClientService {
 	 * Execute the given request, without using the response body.
 	 * In case the response returns a different status-code than expected, an {@link ActivitiServiceException} is thrown with the error message received
 	 * from the client, if possible.
+	 * @param request, HttpUriRequest
+	 * @param serverConfig, ServerConfig of server to be accessed.
+	 * @param expectedStatusCode, expected response code of server.
 	 */
 	public void executeRequestNoResponseBody(HttpUriRequest request, ServerConfig serverConfig, int expectedStatusCode) {
 

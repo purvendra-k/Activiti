@@ -46,7 +46,9 @@ public class AppDeploymentsClientResource extends AbstractClientResource {
     protected AppService clientService;
 
     /**
-     * GET  /rest/activiti/apps -> get a list of apps.
+     * GET  /rest/activiti/apps :- get a list of apps.
+     * @param request, HttpServletRequest type.
+     * @return apps.
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public JsonNode listDeployments(HttpServletRequest request) {
@@ -68,6 +70,9 @@ public class AppDeploymentsClientResource extends AbstractClientResource {
     
     /**
      * POST /rest/activiti/apps: upload a app
+     * @param request HttpServletRequest
+     * @param httpResponse HttpServletResponse
+     * @param file to be uploaded
      */
     @RequestMapping(method=RequestMethod.POST)
     public void handleFileUpload(HttpServletRequest request, HttpServletResponse httpResponse, @RequestParam("file") MultipartFile file){
